@@ -1,0 +1,243 @@
+/* Print */
+
+/* Print: Variables */
+:root {
+  --print-color-black:                    #000000;
+  --print-color-white:                    #FFFFFF;
+
+  --print-fSize-xlarge:                   28pt;
+  --print-fSize-large:                    21pt;
+  --print-fSize-medium:                   12pt;
+  --print-fSize-small:                    8pt;
+
+  --print-lHeight-1:                      1;
+  --print-lHeight-1_5:                    1.5;
+
+  --print-size-auto:                      auto;
+  --print-size-reset:                     0;
+  --print-size-full:                      100%;
+
+  --print-spacing-xlarge:                 1in;
+  --print-spacing-large:                  0.5in;
+  --print-spacing-medium:                 0.25in;
+  --print-spacing-small:                  0.125in;
+  --print-spacing-xsmall:                 0.0625in;
+
+  --print-visibility-hidden:              none;
+  --print-visibility-show:                block;
+}
+
+/* Print: Structure */
+@media print {
+
+  @page {
+    size: letter;
+  }
+
+  /* Print: HTML */
+  html {
+    background-color: var(--print-color-white);
+  }
+
+  /* Print: Body */
+  body {
+    background-color: var(--print-color-white);
+    color: var(--print-color-black);
+    margin: var(--print-spacing-large) !important;
+    margin-top: var(--print-size-reset) !important;
+  }
+
+  /* Print: Media [Images / Figures / Videos] */
+  figure img,
+  figure video {
+    width: var(--print-size-full);
+  }
+
+  /* Print: Site Header & Footer */
+  .site-header .container-fluid,
+  .site-header .fullWidthHeaderSecondaryRow,
+  .site-footer {
+    display: var(--print-visibility-hidden);
+  }
+
+  /* Print: Site Header */
+  .fullWidthHeaderLogoRow {
+    display: var( --print-visibility-show);
+    margin-top: var(--print-spacing-xsmall);
+  }
+
+  /* Print: Site Header [Logo] */
+  .site-header .container,
+  .site-header .headerLogoCol {
+    justify-content: flex-start;
+    margin: var(--print-size-reset);
+    padding: var(--print-size-reset);
+  }
+
+  .site-header .headerLogoCol a img {
+    display: var( --print-visibility-show);
+    height: auto;
+    width: 250px;
+  }
+
+  .site-header .headerLogoCol img {
+    margin: var(--print-size-reset);
+    margin-bottom: var(--print-spacing-xsmall);
+    max-width: var(--print-size-full);
+    width: var(--print-size-full);
+  }
+
+  /* Print: Main */
+  .site-main {
+    margin-top: var(--print-spacing-xsmall) !important;
+  }
+
+  .site-main .container {
+    width: var(--print-size-full);
+    max-width: var(--print-size-full) !important;
+  }
+
+  /* Print: Article [Hidden Elements] */
+  #singlePostContainer .col-0,
+  #singlePostContainer .singleCategoryUL,
+  #singlePostContainer .singleSocialShares,
+  #singlePostContainer .navRowContainer.accordion,
+  #singlePostContainer .authorBoxAvatarCommentary,
+  #singlePostContainer .subscribeShortcodeContainer,
+  #singlePostContainer .singleRepublishingInfoRow,
+  #singlePostContainer .singleFeatImageRow + .row .col-0,
+  #singlePostContainer .socContainer,
+  #singlePostContainer .donateContainer,
+  #singlePostContainer .tipContainer,
+  #singlePostContainer .wp-embedded-content,
+  #singlePostContainer .pdfemb-viewer,
+  #singlePostContainer .widget_sn2-voter-guide-widget,
+  #singlePostContainer iframe,
+  .singleBottomRow.row {
+    display: var(--print-visibility-hidden);
+  }
+
+  #singlePostContainer > div {
+    width: var(--print-size-full);
+  }
+
+  /* Shortcode: [Half Width] */
+  #singlePostContainer .halfwidth {
+    float: none !important;
+    margin: var(--print-size-reset) !important;
+    width: var(--print-size-full) !important;
+  }
+
+  /* Print: Article [Post Title] */
+  #singlePostContainer .singleHed,
+  #singlePostContainer .singleHedCommentary {
+    font-size: var(--print-fSize-large);
+    margin-bottom: var(--print-spacing-small);
+    line-height: var(--print-lHeight-1);
+  }
+
+    /* Print: Article [Sub Title] */
+  #singlePostContainer .hedSecond {
+    font-size: var(--print-fSize-medium);
+    line-height: var(--print-lHeight-1);
+    margin-bottom: var(--print-spacing-small);
+  }
+
+  #singlePostContainer .singleFeatImageRow {
+    margin-bottom: var(--print-spacing-small);
+  }
+
+  /* Print: Article [Post Content] */
+  #dataContent,
+  #singlePostContainer .col-12,
+  #singlePostContainer .col-10,
+  #singlePostContainer .singleFeatImageRow + .row {
+    max-width: var(--print-size-full);
+    padding: var(--print--size-reset);
+    width: var(--print-size-full);
+  }
+
+  #singlePostContainer .contentHolder p,
+  #singlePostContainer .contentHolder li,
+  #singlePostContainer .contentHolder .auxContainer {
+    font-size: var(--print-fSize-medium);
+    line-height: var(--print-lHeight-1_5);
+  }
+
+  /* Print: Article Commentary */
+  #singlePostContainer .singleCommentaryLabel,
+  #singlePostContainer .singleBriefTitle {
+    background-image: none;
+    font-size: var(--print--fSize-medium);
+    margin: var(--print-spacing-reset);
+    margin-bottom: var(--print-spacing-small);
+    padding: var(--print-spacing-reset);
+  }
+
+  #singlePostContainer .singleBylineRow .col-12 {
+    width: auto;
+  }
+
+  #singlePostContainer .singleBylineRow div,
+  #singlePostContainer .singleBylineRow div.col-12,
+  #singlePostContainer .singleBylineRow .py-3 {
+    border: none;
+    margin: var(--print--size-reset) !important;
+    padding: var(--print--size-reset) !important;
+  }
+
+  #singlePostContainer .singleBylineRow .commentaryAuthorContainer,
+  #singlePostContainer .singleBylineRow .commentaryAuthorContainer .py-2 {
+    margin: var(--print--size-reset);
+    padding: var(--print--size-reset);
+  }
+
+  #singlePostContainer .authorNameCommentary h6 {
+    margin-right: var(--print-spacing-small) !important;
+  }
+
+  #singlePostContainer .singleBylineRow h6,
+  #singlePostContainer .singleBylineRow h6.singleBylineContainer,
+  #singlePostContainer .singleBylineRow a h6 {
+    border: none;
+    font-size: var(--print--fSize-xsmall);
+    line-height: var(--print-lHeight-1);
+    margin: var(--print--size-reset);
+  }
+
+
+  /* Flickity — Clean Print Reset */
+  #singlePostContainer .carousel .flickity-viewport {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #singlePostContainer .carousel .flickity-slider {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    position: relative !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  /* #singlePostContainer .carousel .flickity-slider::after {
+    content: "See the full gallery on our website."
+  }
+
+  /* Note: (n + X) controls the total number of slides you want to show in the event you want to limit the total number of images displayed for print from a carousel.  */
+  /* #singlePostContainer .carousel .flickity-slider > :nth-child(n + 5) {
+    display: none !important;
+  } */
+
+  #singlePostContainer .carousel .gallery-item {
+    margin-right: var(--print-size-reset) !important;
+    position: relative !important;
+    transform: none !important;
+  }
+
+  #singlePostContainer .carousel .flickity-button,
+  #singlePostContainer .carousel .flickity-page-dots {
+    display: var(--print-visibility-hidden);
+  }
+}

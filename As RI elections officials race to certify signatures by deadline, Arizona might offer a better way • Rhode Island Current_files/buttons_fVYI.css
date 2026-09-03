@@ -1,0 +1,31 @@
+i.mce-i-customCaption:before {
+    content: "\f20a";
+    font-family: FontAwesome;
+    color: #000;
+    font-size: 1.3em;
+    position: absolute;
+    top: 2.5px;
+    left: 1px;
+ }
+ i.mce-i-dataViz:before {
+    content: "\f200";
+    font-family: FontAwesome;
+    color: #000;
+    font-size: 1.1em;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+ }
+ i.mce-i-voterGuide:before {
+    content: "\f19c";
+    font-family: FontAwesome;
+    color: #000;
+    font-size: 1.1em;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+ }
+ i.mce-i-searchreplace {
+   position: relative;
+   top: 2px;
+ }

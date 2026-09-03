@@ -1,0 +1,121 @@
+/* Styles to adapt imported NFTS/Drupal content to States Newsroom theme */
+
+
+/* Apply bottom margin to all NFTS images */
+.contentHolder .caption-drupal-media p {
+    margin-bottom: 0.5rem;
+}
+
+/* Handle floated images */
+.contentHolder .caption-drupal-media.view-mode--medium.align-left,
+.contentHolder .drupal-media-wrapper.media--view-mode-medium.align-left {
+    float: left;
+    margin-right: 22px;
+    max-width: 300px;
+}
+.contentHolder .caption-drupal-media.view-mode--medium.align-right,
+.contentHolder .drupal-media-wrapper.media--view-mode-medium.align-right {
+    float: right;
+    margin-left: 22px;
+    max-width: 300px;
+}
+.contentHolder .caption-drupal-media.view-mode--small.align-left,
+.contentHolder .drupal-media-wrapper.media--view-mode-small.align-left {
+    float: left;
+    margin-right: 22px;
+    max-width: 185px;
+}
+.contentHolder .caption-drupal-media.view-mode--small.align-right,
+.contentHolder .drupal-media-wrapper.media--view-mode-small.align-right {
+    float: right;
+    margin-left: 22px;
+    max-width: 185px;
+}
+
+/* Force "large" images to extend to full width of article */
+.contentHolder .caption-drupal-media.view-mode--large img,
+.contentHolder .caption-drupal-media.view-mode--default .media--view-mode-large img {
+    width: 100%;
+}
+
+/* Match NFTS captions to native outlet style */
+.contentHolder .caption-drupal-media .figure-caption {
+    font-family: 'Barlow', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 14px;
+    color: var(--dark_gray);
+    margin-top: 0.5rem;
+}
+
+/* Display camera at caption start: Adapted from Font Awesome stylesheet */
+.contentHolder .caption-drupal-media .figure-caption::before {
+    content: "\f030\00A0"; /* Camera followed by non-breaking space */
+    display: inline-block;
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 1;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove float from left/right-aligned images at phone-size screen widths */
+@media (max-width: 575.98px) {
+    .contentHolder .caption-drupal-media.view-mode--medium.align-left,
+    .contentHolder .caption-drupal-media.view-mode--medium.align-right {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*
+ * Keep caption from extending past the image when an arbitrary width
+ * has been set on the <img> tag while no constraints have been placed
+ * on surrounding <figure>
+ *
+ * (Workaround adapted from NFTS stylesheet.)
+ */
+ .contentHolder .caption-drupal-media.view-mode--medium,
+ .contentHolder .caption-drupal-media.view-mode--small {
+    display: table;
+}
+.contentHolder .caption-drupal-media.view-mode--medium  .figure-caption,
+.contentHolder .caption-drupal-media.view-mode--small  .figure-caption {
+    display: table-caption;
+    caption-side: bottom;
+}
+
+/* Center images for which above workaround applies */
+.contentHolder .caption-drupal-media {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Render the info-box class like sidebar shortcode */
+.info-box {
+    background-color: var(--very_light_gray);
+    display: inline-block;
+    padding: 24px 72px 24px 72px;
+    margin-top: 24px;
+    margin-bottom: 44px;
+    width: 100%;
+}
+.info-box::before {
+    border-top: solid 2px var(--brand_two);
+    content: '';
+    display: block;
+    margin: -34px -72px 39px -72px;
+    position: relative;
+}
+.info-box::after {
+    border-bottom: solid 2px var(--brand_two);
+    content: '';
+    display: block;
+    margin: 39px -72px -34px -72px;
+    position: relative;
+}

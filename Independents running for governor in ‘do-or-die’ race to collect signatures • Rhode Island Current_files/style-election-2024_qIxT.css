@@ -1,0 +1,1383 @@
+/* Category Archive & Voter Guide */
+
+.electionVoterGuideLogoContainer {
+    background-color: var(--brand_one);
+    height:170px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.electionVoterGuideLogo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    align-items: end;
+    padding:3rem;
+}
+
+.electionVoterGuideLogoIconContainer {
+    border-bottom: solid 1px var(--brand_two);
+    padding-bottom: 1rem;
+}
+
+.electionVoterGuideLogoIcon {
+    min-width: 57px;
+    max-width: 90px;
+    min-height: 44px;
+    max-height: 57px;
+}
+
+.electionVoterGuideLogoTextContainer {
+    color: white;
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    height: 76px;
+    line-height: 66px;
+}
+
+.electionVoterGuideLogoYear {
+    font-size: 105px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.electionVoterGuideLogoText {
+    margin-left: 2rem;
+    font-size: 70px;
+}
+
+.electionHead, .electionVoterGuideIntro h1 {
+    line-height: inherit;
+}
+
+.electionHead, .electionVoterGuideIntro h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--brand_one);
+}
+
+.electionVoterGuideIntro a:not(.electionVoterGuidePreviewBox a, .tocAccordion a),
+.electionCategoryIntro a {
+	color: var(--link_blue) !important;
+	background-image: linear-gradient(180deg,transparent 65%,#E5E9ED 0);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    transition: background-size .4s ease;
+}
+.electionVoterGuideIntro a:not(.electionVoterGuidePreviewBox a):hover,
+.electionCategoryIntro a:hover {
+	color: var(--link_blue) !important;
+	background-size: 100% 100%;
+
+}
+
+.electionVoterGuideIntro h1 {
+    margin-bottom: 1rem;
+}
+
+.electionVoterGuideIntro h4,
+.electionCategoryIntro h4,
+.electionBallotMeasureContent h2 {
+    color: black;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.electionVoterGuideIntro p,
+.electionVoterGuideIntro li:not(.electionVoterGuideShortcuts li),
+.electionBallotMeasureContent li {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.electionVoterGuideSectionContainer {
+    background-color: var(--very_light_gray);
+    margin-left: -100%;
+}
+
+.electionVoterGuideSection {
+    margin-left: 50%;
+}
+
+.electionVoterGuideSectionIntro {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    z-index: 1;
+}
+
+.electionVoterGuideRace {
+    background-color: white;
+    display: block;
+    border: 6px solid white;
+    box-shadow: 0px 4px 4px 0px #9B9B9B;
+    transition: box-shadow .05s linear;
+    position: relative;
+}
+
+.electionVoterGuideRace .electionRaceInfoKey,
+.electionVoterGuideRace .electionVoterGuideBallotItem {
+    margin-left: 27px;
+}
+
+.electionVoterGuideRace .electionRaceInfoKey span {
+    font-size: 1.5rem;
+}
+
+.electionVoterGuideRace:hover .electionRaceInfoKey span {
+    text-decoration: underline;
+}
+
+.electionVoterGuideRace:hover, .electionVoterGuideBallotMeasure:hover {
+    box-shadow: 0px 10px 20px 0px #727272;
+}
+
+.electionVoterGuideList {
+    padding-left: 0;
+    display: table;
+}
+
+.electionVoterGuideListItem, .electionVoterGuideListItem:hover {
+    color: black;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.3em;
+    list-style: none;
+}
+
+.electionVoterGuideList.decided .electionVoterGuideListItem,
+.electionVoterGuideList.decided .electionVoterGuideListItem:hover {
+    opacity: 30%;
+}
+
+.electionVoterGuideList .electionVoterGuideListItem.dropped,
+.electionVoterGuideList .electionVoterGuideListItem.dropped:hover,
+.electionVoterGuideList .electionVoterGuideListItem.disqualified,
+.electionVoterGuideList .electionVoterGuideListItem.disqualified:hover {
+    opacity: 30%;
+    text-decoration: line-through;
+}
+
+.electionVoterGuideList.decided .electionVoterGuideListItem.winner,
+.electionVoterGuideList.decided:not(.winnerDeclared) .electionVoterGuideListItem.advanced,
+.electionVoterGuideList.decided .electionVoterGuideListItem.winner:hover,
+.electionVoterGuideList.decided:not(.winnerDeclared) .electionVoterGuideListItem.advanced:hover  {
+    opacity: 100%;
+}
+
+.electionVoterGuideOutcomeWrapper{
+    display: table-cell;
+    padding-right: 5px;
+    position: relative;
+    bottom: 2.5px;
+    width: 27px;
+}
+
+.electionVoterGuideWinnerIndicator,
+.electionVoterGuideAdvancedIndicator {
+    display: none;
+}
+
+.electionVoterGuideList.decided .electionVoterGuideListItem.winner .electionVoterGuideWinnerIndicator {
+    display: inline;
+}
+
+.electionVoterGuideList.decided:not(.winnerDeclared) .electionVoterGuideListItem.advanced .electionVoterGuideAdvancedIndicator {
+    display: inline;
+}
+
+.electionRaceInfoKey .electionVoterGuideWinnerIndicator {
+    margin-right: 5px;
+    width: 22px;
+}
+
+.electionVoterGuideCandidateItem {
+    display: table-row;
+}
+
+.electionVoterGuidePartyIndicator {
+    display: table-cell;
+    font-weight: 400;
+    padding-right: 0.5rem;
+}
+
+.electionVoterGuideCandidateName {
+    display: table-cell;
+}
+
+.electionVoterGuideRaceNotes {
+    color: black;
+    font-size: 1rem;
+    margin-top: -0.25rem;
+    padding-right: 24px;
+    padding-left: 27px;
+}
+
+.electionVoterGuideRaceCTA {
+    margin-left: 27px;
+    background-color: var(--brand_two);
+    border: none;
+    border-radius: 5px;
+    color: var(--black);
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.electionVoterGuideRaceCTA:hover {
+    color: var(--white) !important;
+}
+
+.electionVoterGuideRaceHeadingLink::before {
+    content: '';
+	position: absolute;
+	inset: 0;
+    margin: -6px; /* Work around white border on card */
+}
+
+.electionSidebarHeading, .electionVoterGuideSectionHeading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--brand_one);
+}
+
+.electionContentCol, .electionRaceTitleCol {
+    font-family: 'Newsreader', serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 1.25em;
+    text-align:left;
+    color: var(--black);
+    position: relative;
+}
+
+.electionContentCol {
+    margin-bottom:24px;
+    margin-top:-100px !important;
+}
+
+.electionCategoryIntro p,
+.electionCategoryIntro li {
+    margin-bottom: 0.9rem;
+}
+
+.electionRaceTitleCol {
+    top: 0.5rem;
+}
+
+.electionSidebar {
+    background-color:var(--very_light_gray);
+}
+
+.electionSidebar .widget {
+    margin-bottom: 3rem;
+}
+
+.deadlineDate {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+.deadlineText {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+@media (max-width: 575.98px) {
+    .electionContentCol {
+        margin-top: 0;
+    }
+    .electionVoterGuideLogoContainer {
+        height:20vw;
+    }
+
+    .electionVoterGuideLogo {
+        column-gap: 3.5vw;
+        padding: 1.5rem;
+    }
+
+    .electionVoterGuideLogoIconContainer {
+        padding-bottom: 1.5vw;
+    }
+
+    .electionVoterGuideLogoIcon {
+        min-height: 3vw;
+        max-height: 6.4vw;
+        min-width: 1vw;
+    }
+
+    .electionVoterGuideLogoTextContainer {
+        height: 9.1vw;
+        line-height: 8.7vw;
+    }
+
+    .electionVoterGuideLogoYear {
+        font-size: 11.4vw;
+    }
+
+    .electionVoterGuideLogoText {
+        font-size: 6.3vw;
+        margin-left: 4vw;
+    }
+
+    .electionHeroRow {
+        height: 180px;
+    }
+    .electionHeroRowWithTitle {
+        padding-top: 72px;
+    }
+    .electionRaceTitleContainer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .electionVoterGuideSectionContainer {
+        margin-left: 0;
+    }
+    .electionVoterGuideSection {
+        margin-left: 0;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .electionVoterGuideLogoContainer {
+        height:120px;
+    }
+
+    .electionVoterGuideLogo {
+        column-gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .electionVoterGuideLogoIconContainer {
+        padding-bottom: 0.75rem;
+    }
+
+    .electionVoterGuideLogoIcon {
+        min-width: 37px;
+        max-width: 60px;
+        min-height: 18px;
+        max-height: 34px;
+    }
+
+    .electionVoterGuideLogoTextContainer {
+        height: 50px;
+        line-height: 47px;
+    }
+
+    .electionVoterGuideLogoYear {
+        font-size: 68px;
+    }
+
+    .electionVoterGuideLogoText {
+        font-size: 43px;
+        margin-left: 1.5rem;
+    }
+
+    .electionHeroRow {
+        height: 250px;
+    }
+    .electionHeroRowWithTitle {
+        padding-top: 142px;
+    }
+    .electionVoterGuideSectionContainer {
+        margin-left: 0;
+    }
+    .electionVoterGuideSection {
+        margin-left: 0;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .electionVoterGuideLogoContainer {
+        height:92px;
+        margin-bottom: 2.5rem;
+    }
+
+    .electionVoterGuideLogo {
+        column-gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .electionVoterGuideLogoIconContainer {
+        padding-bottom: 0.35rem;
+    }
+
+    .electionVoterGuideLogoIcon {
+        min-width: 25px;
+        max-width: 40px;
+        min-height: 13px;
+        max-height: 25px
+    }
+
+    .electionVoterGuideLogoTextContainer {
+        height: 30px;
+        line-height: 25px;
+    }
+
+    .electionVoterGuideLogoYear {
+        font-size: 45px;
+    }
+
+    .electionVoterGuideLogoText {
+        font-size: 28px;
+        margin-left: 1rem;
+    }
+
+    .electionHeroRow {
+        height: 300px;
+    }
+    .electionHeroRowWithTitle {
+        padding-top: 192px;
+    }
+    .electionBallotMeasureContent iframe,
+    .electionBallotMeasureContent .halfwidth {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1198.98px) {
+
+    .electionVoterGuideLogoContainer {
+        height:135px;
+    }
+
+    .electionVoterGuideLogo {
+        column-gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .electionVoterGuideLogoIconContainer {
+        padding-bottom: 0.75rem;
+    }
+
+    .electionVoterGuideLogoIcon {
+        min-width: 42px;
+        max-width: 75px;
+        min-height: 29px;
+        max-height: 42px
+    }
+
+    .electionVoterGuideLogoTextContainer {
+        height: 53px;
+        line-height: 45px;
+    }
+
+    .electionVoterGuideLogoYear {
+        font-size: 78px;
+    }
+
+    .electionVoterGuideLogoText {
+        font-size: 52px;
+        margin-left: 1.5rem;
+    }
+
+    .electionHeroRow {
+        height: 300px;
+    }
+    .electionHeroRowWithTitle {
+        padding-top: 192px;
+    }
+}
+@media (min-width: 1200px) {
+
+    .electionHeroRow {
+        height: 300px;
+    }
+    .electionHeroRowWithTitle {
+        padding-top: 192px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1398.98px) {
+    .electionVoterGuideLogoContainer {
+        height:160px;
+    }
+
+    .electionVoterGuideLogoIcon {
+        min-width: 54px;
+        max-width: 85px;
+        min-height: 37px;
+        max-height: 54px;
+    }
+
+    .electionVoterGuideLogoTextContainer {
+        height: 72px;
+        line-height: 66px;
+    }
+
+    .electionVoterGuideLogoYear {
+        font-size: 98px;
+    }
+
+    .electionVoterGuideLogoText {
+        font-size: 56px;
+    }
+}
+
+/* Candidate Comparison */
+
+.electionRaceHeadingContainer {
+    background-color: var(--brand_one);
+    min-height: 92px;
+}
+
+.electionRaceHeading {
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.electionRaceCTA {
+    background-color: var(--brand_two);
+    border-radius: 5px;
+    color: var(--black);
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.electionRaceCTA:hover {
+    color: white !important;
+}
+
+.electionRaceGuidesDotVoteBlurb {
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.electionRaceInfoList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.electionRaceInfoKey {
+    color: var(--sn_red);
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.electionRaceInfoKey span {
+    color: var(--sn_red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.electionRaceInfoValue {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+}
+
+.electionRaceInfoValue a {
+    color: black;
+}
+
+.electionRaceNotes, .electionRaceIntro {
+    font-family: 'Newsreader', serif;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.electionRaceIntro .editorialSubhed {
+    color: black;
+    font-family: 'Newsreader', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.electionRaceSection {
+    border-top: 2px solid var(--brand_two);
+    text-align: center;
+}
+
+.electionRaceSection .electionMicrophoneSVG {
+    background-color: white;
+    display: inline;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    position: relative;
+    top: -23px;
+}
+
+.electionRaceSection .electionMicrophoneSVG path {
+    fill: var(--brand_one);
+}
+
+.electionRaceSection h2 {
+    color: var(--brand_one);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: -0.5rem;
+    text-transform: uppercase;
+}
+
+.electionRaceSection .electionRaceIssueQuestion {
+    color: black;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.electionRaceSection .electionRaceIssueQuestionDetail {
+    font-size: 1.5rem;
+    font-family: 'Newsreader', serif;
+}
+
+.electionRaceCandidateGrid.collapsible ,
+.electionVoterGuideSet.collapsible,
+.electionVoterGuideBallotMeasures.collapsible  {
+    overflow:hidden;
+    position: relative;
+    transition: max-height 200ms ease-in;
+}
+
+.electionRaceCandidateGrid.collapsible.collapsed {
+    max-height: 200px !important;
+    transition: max-height 200ms ease-out;
+}
+
+.electionVoterGuideSet.collapsible.collapsed,
+.electionVoterGuideBallotMeasures.collapsible.collapsed  {
+    max-height: 150px !important;
+    transition: max-height 200ms ease-out;
+}
+
+.electionRaceCandidateGrid.collapsible::after,
+.electionVoterGuideSet.collapsible::after,
+.electionVoterGuideBallotMeasures.collapsible::after  {
+    content: "";
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, white);
+    transition: visibility 200ms ease-in;
+}
+
+.electionVoterGuideSet.collapsible::after,
+.electionVoterGuideBallotMeasures.collapsible::after {
+    background: linear-gradient(to bottom, transparent, var(--very_light_gray));
+}
+
+.electionRaceCandidateGrid.collapsible.collapsed::after,
+.electionVoterGuideSet.collapsible.collapsed::after,
+.electionVoterGuideBallotMeasures.collapsible.collapsed::after {
+    visibility: visible;
+}
+
+.electionRaceCandidateGrid.collapsible::after,
+.electionVoterGuideSet.collapsible::after,
+.electionVoterGuideBallotMeasures.collapsible::after {
+    visibility: hidden;
+}
+
+.electionRaceCandidateCard {
+    background-color: var(--very_light_gray);
+    position: relative;
+}
+
+.electionRaceCandidateGrid.decided .electionRaceCandidateCard:not(.winner, .advanced) *,
+.electionRaceCandidateGrid.winnerDeclared .electionRaceCandidateCard.advanced *,
+.electionRaceCandidateGrid .electionRaceCandidateCard.dropped *,
+.electionRaceCandidateGrid .electionRaceCandidateCard.disqualified * {
+    opacity: 85%;
+}
+
+.electionRaceMore {
+    border: none;
+    background-color: white;
+    color: var(--sn_red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.electionVoterGuideSection .electionRaceMore {
+    background-color: transparent;
+}
+
+.electionRaceMore .arrowDown, .electionRaceMore .arrowUp {
+    position: relative;
+    display: block;
+    left: 50%;
+    width: 50%;
+    margin-left: -14px;
+}
+
+.electionRaceMore .arrowDown {
+    top: 2px;
+}
+
+.electionRaceMore .arrowUp {
+    top: -13px;
+}
+
+.electionRaceMore .arrowDown::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 11px solid var(--sn_red);
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+}
+
+.electionRaceMore .arrowDown::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    border-top: 7px solid #fff;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.electionVoterGuideSection .electionRaceMore .arrowDown::after {
+    border-top: 7px solid var(--very_light_gray);
+}
+
+.electionRaceMore,
+.electionRaceMoreShow,
+.electionRaceMore .arrowDown {
+    display: none;
+}
+
+.collapsible + .electionRaceMore {
+    display: inline;
+}
+
+.collapsed + .electionRaceMore .electionRaceMoreShow,
+.collapsed + .electionRaceMore .arrowDown {
+    display: block;
+}
+
+.collapsed + .electionRaceMore .electionRaceMoreHide,
+.collapsed + .electionRaceMore .arrowUp {
+    display: none;
+}
+
+.electionRaceMore .arrowUp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 11px solid var(--sn_red);
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+}
+
+.electionRaceMore .arrowUp::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    border-bottom: 7px solid #fff;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.electionVoterGuideSection .electionRaceMore .arrowUp::after {
+    border-bottom: 7px solid var(--very_light_gray);
+}
+
+.electionRaceCandidateCard.electionCandidateBlue{
+    box-shadow: 0px 4px 4px 0px rgba(0, 123, 199, 0.5);
+}
+
+.electionRaceCandidateCard.electionCandidateRed {
+    box-shadow: 0px 4px 4px 0px rgba(233, 71, 36, 0.5);
+}
+
+.electionRaceCandidateCard.electionCandidateGray {
+    box-shadow: 0px 4px 4px 0px #9B9B9B;
+}
+
+.electionRaceWinnerIndicator,
+.electionRaceAdvancedIndicator {
+    display: none;
+}
+
+.electionRaceCandidateCard.winner .electionRaceWinnerIndicator {
+    background-color: var(--brand_two);
+    display: flex;
+    height: 34px;
+    top: 0.8rem;
+    left: 0.8rem;
+    width: 34px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.electionRaceCandidateCard.winner .hasCandidateImage .electionRaceWinnerIndicator {
+    position: absolute;
+}
+
+.electionRaceCandidateGrid:not(.winnerDeclared) .electionRaceCandidateCard.advanced .electionRaceAdvancedIndicator {
+    background-color: var(--brand_two);
+    display: flex;
+    height: 34px;
+    top: 0.8rem;
+    left: 0.8rem;
+    width: 34px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.electionRaceCandidateGrid:not(.winnerDeclared) .electionRaceCandidateCard.advanced .hasCandidateImage .electionRaceAdvancedIndicator {
+    position: absolute;
+}
+
+.electionRaceCandidatePhoto img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.electionRaceSection .electionRaceCandidateName {
+    color: var(--brand_one);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.electionRaceCandidateName abbr {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.electionRaceCandidateTitle {
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #505257;
+    margin-bottom:24px;
+}
+
+.electionCandidateBlurb {
+    font-family: 'Newsreader', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25em;
+}
+
+.electionCandidateLinks a {
+    color: #8B8F96;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-decoration: underline !important;
+}
+
+.electionRaceIssueLinks a, .electionRaceIssueLinks a:hover {
+    background-color: #505257;
+    color: white !important;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+}
+
+.electionRaceGoBack {
+	color: var(--link_blue);
+    font-family: 'Barlow', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.3rem;
+	line-height: 1.1em;
+	letter-spacing: 1px;
+    text-align: center;
+  	text-transform: uppercase;
+}
+
+@media (max-width: 575.98px) {
+    .electionRaceHeading  {
+        font-size: 2.5rem;
+    }
+
+    .electionRaceCandidatePhoto img {
+        height: auto;
+    }
+
+    .collapsed .electionRaceCandidateGrid {
+        max-height: 350px !important;
+    }
+    .electionRaceSection .electionRaceIssueQuestion {
+        font-size: 1.5rem;
+    }
+
+    .electionRaceSection .electionRaceIssueQuestionDetail {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .electionRaceHeading  {
+        font-size: 2.5rem;
+    }
+
+    .electionRaceCandidatePhoto img {
+        height: 230px;
+    }
+    .electionRaceSection .electionRaceIssueQuestion {
+        font-size: 1.75rem;
+    }
+    .electionRaceSection .electionRaceIssueQuestionDetail {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .electionRaceHeading  {
+        font-size: 2.5rem;
+    }
+
+    .electionRaceCandidatePhoto img {
+        height: 350px;
+    }
+
+    .collapsed .electionRaceCandidateGrid {
+        max-height: 250px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1198.98px) {
+    #electionRaceCandidateGrid {
+        justify-content: center;
+    }
+
+    .electionRaceCandidatePhoto img {
+        height: 200px;
+    }
+
+    .electionRaceCandidateName {
+        font-size: 1.2rem;
+    }
+
+    .electionRaceCandidateTitle {
+        font-size: 1.2rem;
+    }
+
+    .electionCandidateBlurb {
+        display: block;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .electionRaceCandidatePhoto img {
+        height: 190px;
+    }
+
+    .electionCandidateBlurb {
+        display: block;
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Ballot Measures */
+.electionMeasureFeaturedImage {
+    float: right;
+    max-width: 50%;
+    margin: 0px 0px 20px 30px;
+}
+
+@media (max-width: 575.98px) {
+    .electionMeasureFeaturedImage {
+        float: none;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .electionMeasureFeaturedImage {
+        float: none;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+/* Widgets */
+
+.electionGuideContainer {
+    background-color: var(--brand_one);
+    border-radius: 5px;
+    color: white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.1em;
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.electionGuideContainer .electionGuideLogo {
+    margin-bottom: 1rem;
+}
+
+.electionGuideContainer .electionGuideLogo textPath {
+    fill: rgba(241, 242, 242, 100);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.electionGuideCTA a,
+.electionSubscriptionContainer .at-form-submit .at-submit.btn-at.btn-at-primary,
+.electionSubscriptionContainer .at-form-submit .at-submit.btn-at.btn-at-primary:hover {
+    background-color: var(--brand_two);
+    border-radius: 5px;
+    color: black;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.1rem;
+    margin-top: 1.5rem;
+    padding: 0.4rem;
+    text-transform: uppercase;
+    text-shadow: none;
+    width: 100%;
+}
+
+.electionGuideCTA a:hover,
+.electionSubscriptionContainer .at-form-submit .at-submit.btn-at.btn-at-primary:hover  {
+    color: white !important;
+}
+
+.electionSubscriptionContainer {
+    background-color: var(--briefs_gray);
+    border-radius: 5px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.15em;
+    padding: 1.5rem;
+}
+
+/* Subscribe Form */
+.electionSubscriptionContainer {
+    padding-bottom: 1.2rem;
+}
+
+.electionSubscriptionContainer .at-inner,
+.electionSubscriptionContainer .at-fields {
+    background-color: var(--briefs_gray);
+}
+
+.electionSubscriptionContainer .at .at-select,
+.electionSubscriptionContainer .at .at-text,
+.at .at-select small {
+    font-family: 'Barlow', sans-serif !important;
+}
+
+.electionSubscriptionContainer .at .at-text input[type],
+.electionSubscriptionContainer .at .at-select select {
+	background-color:white !important;
+	border-radius:5px;
+	border-color: transparent;
+}
+
+.electionSubscriptionContainer .at .at-text input[type]:focus,
+.electionSubscriptionContainer .at .at-select select:focus {
+	border-color: var(--brand_one) !important;
+}
+
+.electionSubscriptionContainer .at-form-submit {
+    padding: 0;
+}
+
+.electionSubscriptionContainer .at-form-submit .at-submit {
+	float: none;
+	width: 100%;
+    margin-left: 0;
+}
+
+.electionSubscriptionContainer .at-form-submit .at-submit.btn-at.btn-at-primary,
+.electionSubscriptionContainer .at-form-submit .at-submit.btn-at.btn-at-primary:hover  {
+    margin: 0;
+}
+
+.electionSubscriptionContainer .at-row>[class^=at-] {
+    min-width: unset;
+    margin: 0;
+}
+
+.electionSubscriptionContainer .at .at-fieldset {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.electionSubscriptionContainer .at label.at-text.error small.error,
+.electionSubscriptionContainer .at-row .StateProvince small.error,
+.electionSubscriptionContainer .at .at-text.error {
+    color: #b72025 !important;
+}
+
+.electionSubscriptionContainer .at .at-text.error input[type] {
+    border-color: #b72025 !important;
+    color: #b72025 !important;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .electionGuideContainer {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 400px) {
+    .electionGuideContainer {
+        font-size: 1.2em;
+    }
+}
+
+/* Widget adjustments for appearances in alternate locations */
+
+.heroColumnSidebar .electionGuideContainer {
+    font-size: 1em;
+    font-weight: 400;
+    padding-top: 1.1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.65rem;
+}
+
+.heroColumnSidebar .electionGuideContainer p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.heroColumnSidebar .electionGuideLogo {
+    width: 60%;
+    margin-bottom: 0.7rem;
+}
+
+.heroColumnSidebar .electionGuideCTA a {
+    display: inline-block;
+    max-width: 250px;
+    line-height: 0.9rem;
+    margin-top: 0;
+}
+
+#singlePostContainer .electionGuideContainer {
+    padding-top: 1.75rem;
+    padding-bottom: 1.5rem;
+}
+
+#singlePostContainer .electionGuideContainer a {
+    background-image: none;
+    color: black !important;
+}
+
+#singlePostContainer .electionGuideContainer a:hover {
+    color: white !important;
+}
+
+#singlePostContainer .electionGuideContainer p {
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+}
+
+#singlePostContainer .electionGuideLogo {
+    margin-bottom: 0.7rem;
+}
+
+@media (min-width: 1400px) {
+    #singlePostContainer .electionGuideLogo {
+        margin-bottom: 0.7rem;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .heroColumnSidebar .electionGuideLogo {
+        width: 65%;
+    }
+
+    .heroColumnSidebar .electionGuideContainer p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    #singlePostContainer .electionGuideLogo {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1198.98px) {
+    .heroColumnSidebar .electionGuideLogo {
+        width: 70%;
+    }
+
+    .heroColumnSidebar .electionGuideContainer {
+        font-size: 0.9em;
+    }
+
+    .heroColumnSidebar .electionGuideContainer p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #singlePostContainer .electionGuideContainer p {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .heroColumnSidebar .electionGuideContainer {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .heroColumnSidebar .electionGuideLogo {
+        width: 85%;
+    }
+
+    .heroColumnSidebar .electionGuideContainer {
+        font-size: 0.9em;
+    }
+
+    .heroColumnSidebar .electionGuideContainer p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .heroColumnSidebar .electionGuideCTA a {
+        max-width: 170px;
+    }
+
+    #singlePostContainer .electionGuideContainer p {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .heroColumnSidebar .electionGuideLogo {
+        width: 50%;
+    }
+
+    .heroColumnSidebar .electionGuideContainer {
+        font-size: 1em;
+    }
+
+    .heroColumnSidebar .electionGuideContainer p {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+    #singlePostContainer .electionGuideContainer {
+        margin-bottom: 1.25rem;
+    }
+
+    #singlePostContainer .electionGuideLogo {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    #singlePostContainer .electionGuideContainer p {
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .heroColumnSidebar .electionGuideContainer {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+
+    .heroColumnSidebar .electionGuideLogo,
+    #singlePostContainer .electionGuideLogo {
+        max-height: 60px;
+        width: auto;
+    }
+
+    .heroColumnSidebar .electionGuideContainer {
+        font-size: 1em;
+    }
+
+    .heroColumnSidebar .electionGuideContainer p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 350px;
+    }
+
+    #singlePostContainer .electionGuideContainer {
+        margin-bottom: 1.25rem;
+    }
+
+    #singlePostContainer .electionGuideContainer p {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+    }
+}

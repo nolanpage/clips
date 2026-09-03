@@ -1,0 +1,205 @@
+/**
+ * Styles for the Republication Tracker Tool widget.
+ *
+ * .side-widget on passblue.com replaces standard wordpress .widget class
+ */
+ .republication_tracker_tool {
+     max-width: unset !important;
+     margin:0 !important;
+ }
+
+ .republication_tracker_tool h4 {
+     display: none;
+ }
+
+ .ccImg {
+     width: 200px;
+     padding-left:0px;
+     padding-right:50px;
+     padding-top: 2px;
+     padding-bottom:2px;
+ }
+
+ .repubWidgetContainer {
+    background-color: #505257;
+    border-radius:5px;
+    padding: 8px 14px;
+    display:flex;
+   flex-direction:row;
+   justify-content: space-between;
+   align-content: space-between;
+   align-items: center;
+ }
+
+ .repubWidgetContainer p {
+     font-size: 14px !important;
+ }
+
+.side-widget.republication_tracker_tool,
+.widget.republication_tracker_tool {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.imgLink {
+    text-align: left;
+    width:100%;
+}
+
+.side-widget.republication_tracker_tool p,
+.widget.republication_tracker_tool p {
+    margin-bottom: 1em;
+}
+
+.side-widget.republication_tracker_tool a.license,
+.widget.republication_tracker_tool a.license {
+    border-top: 3px double #ddd;
+    border-bottom: 3px double #ddd;
+    padding: 1em 0;
+    min-width: 100%;
+    display: block;
+}
+
+.side-widget.republication_tracker_tool button.republication-tracker-tool-button,
+.widget.republication_tracker_tool button.republication-tracker-tool-button {
+    width:100%;
+    background-color: white;
+    border: 0px solid white;
+    color: #007BC7;
+    padding: 0px 16px;
+    font-size: 12px;
+    display: block;
+    border-radius: .25em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.side-widget.republication_tracker_tool button.republication-tracker-tool-button:hover,
+.widget.republication_tracker_tool button.republication-tracker-tool-button:hover {
+    background-color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#republication-tracker-tool-modal {
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.75);
+}
+
+#republication-tracker-tool-modal-content {
+    position: absolute;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90%;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--briefs_gray);
+    padding: 2em;
+    text-align: left;
+    font-family: 'Barlow', sans-serif;
+}
+
+#republication-tracker-tool-modal-content textarea {
+    box-sizing: border-box;
+    width: 100%;
+    margin:.5em 0 1em 0;
+    cursor: auto;
+    background-color: inherit;
+    border-color: inherit;
+}
+
+#republication-tracker-tool-modal-content .cc-license,
+#republication-tracker-tool-modal-content .cc-policy {
+    margin-bottom: 1em;
+}
+
+#republication-tracker-tool-modal-content .cc-license img {
+    margin-bottom: 1em;
+}
+
+#republication-tracker-tool-modal-content h1 {
+    display: none;
+}
+
+#republication-tracker-tool-modal-content .article-info h2 {
+    margin-bottom: 0;
+}
+
+.republication-tracker-tool-close {
+    background: none;
+    border: 0;
+    color: black;
+    font-family: sans-serif;
+    font-size: 2em;
+    height: 36px;
+    line-height: 0;
+    padding: 0;
+    position: absolute;
+    right: 0.4em;
+    top: -0.1em;
+    text-transform: lowercase;
+    width: 36px;
+}
+
+.republication-tracker-tool-close:hover {
+    cursor:pointer;
+    opacity:.8;
+}
+
+.modal-open-disallow-scrolling {
+    overflow: hidden;
+}
+.articleContainer {
+    background-color: white;
+    padding: 28px 24px;
+}
+.accordion {
+	font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--link_blue);
+}
+.republisherButton {
+	font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 13px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+    background-color: var(--link_blue);
+	padding: 8px 14px;
+	border-radius: 5px;
+	border: none !important;
+    text-transform: uppercase;
+}
+.article-info h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+}
+@media (max-width: 767.98px) {
+    .article-info h2 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    .accordian {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
